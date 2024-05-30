@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post</title>
+</head>
+<body>
+{% for i in posts %}
+    <h4>{{ i.data|date:'d.m.Y' }}</h4><br>
+    <img src="{{ i.image.url }} " style="height:150px;"><br>
+    <h1>{{ i.title }}</h1><br>
+    <p>{{ i.text }}</p><hr>
+{% endfor %}
+</body>
+</html>

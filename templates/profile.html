@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+{% for i in profile %}
+    <img src="{{ i.image.url }} " style="height:150px;"><br>
+    <h4>{{ i.first_name }}</h4><br>
+    <h4>{{ i.last_name }}</h4><br>
+    <h4>{{ i.age }}</h4><br>
+    <h4>{{ i.tel }}</h4><hr>
+{% endfor %}
+
+</body>
+</html>

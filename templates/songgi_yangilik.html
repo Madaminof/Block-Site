@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So'nggi Yangiliklar</title>
+</head>
+<body>
+    <h1>So'nggi Yangiliklar</h1>
+        {% for p in post %}
+            <h4>{{ p.data }}</h4><br>
+            <h5>{{ p.text }}</h5><hr>
+
+        {% endfor %}
+
+</body>
+</html>

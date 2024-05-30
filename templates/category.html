@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category</title>
+</head>
+<body>
+    <h1>Category</h1>
+        {% for category in categories %}
+            <a href="{% url 'post' category.pk%}">{{ category.name }}</a><br>
+        {% endfor %}
+    <hr>
+<a href="{% url 'profile' %}">Profile</a><br>
+
+</body>
+</html>
