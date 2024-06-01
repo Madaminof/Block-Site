@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Update Profile</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">Username</label>
+                <input type="text" name="username" id="id_username" value="{{ user.username }}">
+            </div>
+            <div class="form-group">
+                <label for="id_first_name">Full Name</label>
+                <input type="text" name="first_name" id="id_first_name" value="{{ user.first_name }}">
+            </div>
+            <div class="form-group">
+                <label for="id_last_name">Last Name</label>
+                <input type="text" name="last_name" id="id_last_name" value="{{ user.last_name }}">
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email</label>
+                <input type="email" name="email" id="id_email" value="{{ user.email }}">
+            </div>
+            <div class="form-group">
+                <label for="id_image">Profile Image</label>
+                <input type="file" name="image" id="id_image">
+                {% if user.image %}
+                    <img src="{{ user.image.url }}" alt="Profile Image" class="profile-image">
+                {% endif %}
+            </div>
+            <button type="submit" class="btn">Save Changes</button>
+            <button style="background-color: orange; padding: 5px 15px; border: none; border-radius: 5px;"><a style="color: white; text-decoration: none;" href="{% url 'landing_page' %}" >Back</a></button>
+
+        </form>
+    </div>
+</body>
+</html>

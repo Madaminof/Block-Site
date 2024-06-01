@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}'s Profile</title>
+
 </head>
 <body>
-{% for i in profile %}
-    <img src="{{ i.image.url }} " style="height:150px;"><br>
-    <h4>{{ i.first_name }}</h4><br>
-    <h4>{{ i.last_name }}</h4><br>
-    <h4>{{ i.age }}</h4><br>
-    <h4>{{ i.tel }}</h4><hr>
-{% endfor %}
+    <div class="container">
+        <h1>{{ user.username }}'s Profile</h1>
+        {% if user.image %}
+            <img src="{{ user.image.url }}" alt="Profile Image" class="profile-image">
+        {% endif %}
+        <div class="profile-info">
+            <p><strong>First Name:</strong> {{ user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <button style="background-color: orange; padding: 5px 15px; border: none; border-radius: 5px;"><a style="color: white; text-decoration: none;" href="{% url 'landing_page' %}" >Back</a></button>
 
+        </div>
+    </div>
 </body>
 </html>
