@@ -1,14 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Post</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .post-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .post-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-container h4 {
+            font-size: 16px;
+            color: #888;
+            margin: 0;
+        }
+
+        .post-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .post-container h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .post-container p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .post-container h1 {
+                font-size: 20px;
+            }
+
+            .post-container p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .post-container h1 {
+                font-size: 18px;
+            }
+
+            .post-container p {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-{% for i in posts %}
-    <h4>{{ i.data|date:'d.m.Y' }}</h4><br>
-    <img src="{{ i.image.url }} " style="height:150px;"><br>
-    <h1>{{ i.title }}</h1><br>
-    <p>{{ i.text }}</p><hr>
-{% endfor %}
+    {% for i in posts %}
+    <div class="post-container">
+        <h4>{{ i.data|date:'d.m.Y' }}</h4>
+        <img src="{{ i.image.url }}">
+        <h1>{{ i.title }}</h1>
+        <p>{{ i.text }}</p>
+        <hr>
+    </div>
+    {% endfor %}
 </body>
 </html>

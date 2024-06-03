@@ -10,7 +10,8 @@ from .models import Category, Post,LatestNews,Profile
 class CategoryView(View):
     def get(self,request):
         categories = Category.objects.all()
-        return render(request,'category.html',{'categories': categories})
+        product  = Post.objects.all()
+        return render(request,'base.html', {'categories': categories,'product': product})
 
 
 class PostView(View):
