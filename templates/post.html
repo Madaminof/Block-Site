@@ -85,14 +85,25 @@
     </style>
 </head>
 <body>
-    {% for i in posts %}
+  {% for i in posts %}
     <div class="post-container">
         <h4>{{ i.data|date:'d.m.Y' }}</h4>
         <img src="{{ i.image.url }}">
         <h1>{{ i.title }}</h1>
         <p>{{ i.text }}</p>
+        <form action="{% url 'posts:like_post' i.pk %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">
+                {% if user.is_authenticated  %}
+                    like
+                {% endif %}
+            </button>
+            <span>{{ i.likes.count }}</span> <!-- Layklar soni -->
+        </form>
         <hr>
     </div>
-    {% endfor %}
+{% endfor %}
+
+
 </body>
 </html>

@@ -4,7 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Profile</title>
+    <style>
+        /* Container style */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
+        /* Form group style */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Label style */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Input style */
+        input[type="text"],
+        input[type="email"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Profile image style */
+        .profile-image {
+            display: block;
+            max-width: 200px;
+            margin-top: 10px;
+        }
+
+        /* Button style */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Back button style */
+        .back-btn {
+            background-color: orange;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .back-btn a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -35,8 +102,7 @@
                 {% endif %}
             </div>
             <button type="submit" class="btn">Save Changes</button>
-            <button style="background-color: orange; padding: 5px 15px; border: none; border-radius: 5px;"><a style="color: white; text-decoration: none;" href="{% url 'landing_page' %}" >Back</a></button>
-
+            <button class="back-btn"><a href="{% url 'landing_page' %}">Back</a></button>
         </form>
     </div>
 </body>

@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ user.username }}'s Profile</title>
 
+
+<style>
+    /* .container sinfiga mos ravishda stil */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    background-color: burlywood; /* .container foni */
+    border-radius: 15px; /* .container radiusi */
+    margin: auto; /* .containerni markazga qo'yish */
+    max-width: 600px; /* .containerning maksimal kengligi */
+}
+
+body{
+background-color: aliceblue;
+}
+
+/* Sarlavha stilini belgilash */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Profil tasviri stilini belgilash */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* Profil ma'lumotlari bloki stilini belgilash */
+.profile-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Ma'lumotlar paragraflari stilini belgilash */
+.profile-info p {
+    margin: 5px 0;
+}
+
+/* Orqa tugma stilini belgilash */
+.back-btn {
+    background-color: orange;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background-color: #d45b07;
+}
+
+</style>
 </head>
 <body>
     <div class="container">
@@ -17,6 +79,8 @@
             <p><strong>Last Name:</strong> {{ user.last_name }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
             <button style="background-color: orange; padding: 5px 15px; border: none; border-radius: 5px;"><a style="color: white; text-decoration: none;" href="{% url 'landing_page' %}" >Back</a></button>
+            <button style="background-color: orange; padding: 5px 15px; border: none; border-radius: 5px;"><a style="color: white; text-decoration: none;" href="{% url 'users:profile-update' user.pk %}" >Update</a></button>
+
 
         </div>
     </div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>top Likes</title>
+</head>
+<body>
+<h1>Top Likes Products</h1><br>
+{% for i in top %}
+    <h4>{{ i.data|date:'d.m.Y' }}</h4><br>
+    <img src="{{ i.image.url }} " style="height:130px;"><br>
+    <h1>{{ i.title }}</h1><br>
+    <h4>{{ i.text }}</h4><hr>
+
+{% endfor %}
+
+</body>
+</html>

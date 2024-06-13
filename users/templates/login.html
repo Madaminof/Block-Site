@@ -4,6 +4,79 @@
     <meta charset="UTF-8">
     <title>Login</title>
 
+
+
+<style>
+    /* Barcha HTML elementlarga bo'yicha stil beramiz */
+body {
+    font-family: Arial, sans-serif; /* Shriftni tanlash */
+    background-color: #f0f0f0; /* Orqa fon rangi */
+    margin: 0; /* Sahifaning tepasidagi boshsa o'lchamini olib tashlaymiz */
+    padding: 0; /* Sahifaning tepasidagi paddingni olib tashlaymiz */
+}
+
+/* Sarlavhaga stil beramiz */
+h1 {
+    text-align: center; /* Matn markazga joysin */
+    margin-top: 50px; /* Yuqori bo'yoqni 50 piksel balandligida tashlaymiz */
+    color: #333; /* Matn rangi */
+}
+
+/* Formaga stil beramiz */
+form {
+    max-width: 400px; /* Formaning maksimal kengligi */
+    margin: 0 auto; /* Formani o'rtaga joylashtiramiz */
+    background-color: #fff; /* Forma fon rangi */
+    padding: 30px; /* Formaning ichki paddingi */
+    border-radius: 8px; /* Formaning radiusi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Formaning teshik effekti */
+}
+
+/* Inputlarga stil beramiz */
+input[type="text"], input[type="password"] {
+    width: 100%; /* To'ldirilishi kerak bo'lgan hajmini o'zi olishi */
+    padding: 10px; /* Ichki padding */
+    margin: 8px 0; /* Yuqori va pastdagi marginlar */
+    box-sizing: border-box; /* Width va height da border va padding ni qo'shib qo'yish */
+    border: 1px solid #ccc; /* Inputning chiziq rangi */
+    border-radius: 5px; /* Inputning radiusi */
+}
+
+/* Submit tugmasiga stil beramiz */
+button[type="submit"] {
+    width: 100%; /* To'ldirilishi kerak bo'lgan hajmini o'zi olishi */
+    background-color: #4CAF50; /* Submit tugmasining rangi */
+    color: white; /* Submit tugmasining matni rangi */
+    padding: 14px 20px; /* Submit tugmasining paddingi */
+    margin: 8px 0; /* Yuqori va pastdagi marginlar */
+    border: none; /* Chegaralar */
+    border-radius: 5px; /* Submit tugmasining radiusi */
+    cursor: pointer; /* Kursor turi */
+}
+
+/* Back tugmasiga stil beramiz */
+button.back-btn {
+    width: 100%; /* To'ldirilishi kerak bo'lgan hajmini o'zi olishi */
+    background-color: orange; /* Back tugmasining rangi */
+    padding: 10px 20px; /* Back tugmasining paddingi */
+    margin: 8px 0; /* Yuqori va pastdagi marginlar */
+    border: none; /* Chegaralar */
+    border-radius: 5px; /* Back tugmasining radiusi */
+    cursor: pointer; /* Kursor turi */
+}
+
+/* Back tugmasining hover holatiga stil beramiz */
+button.back-btn:hover {
+    background-color: #d45b07; /* Back tugmasining hover rangi */
+}
+
+/* Back tugmasining a tegiga stil beramiz */
+button.back-btn a {
+    color: white; /* Back tugmasining a tegi rangi */
+    text-decoration: none; /* A tegining chiziqsiz bo'lishi */
+}
+
+</style>
 </head>
 <body>
     <h1>Login Page</h1>
