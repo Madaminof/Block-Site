@@ -63,6 +63,22 @@
             margin: 20px 0;
         }
 
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
         @media (max-width: 768px) {
             .post-container h1 {
                 font-size: 20px;
@@ -91,19 +107,10 @@
         <img src="{{ i.image.url }}">
         <h1>{{ i.title }}</h1>
         <p>{{ i.text }}</p>
-        <form action="{% url 'posts:like_post' i.pk %}" method="POST">
-            {% csrf_token %}
-            <button type="submit">
-                {% if user.is_authenticated  %}
-                    like
-                {% endif %}
-            </button>
-            <span>{{ i.likes.count }}</span> <!-- Layklar soni -->
-        </form>
         <hr>
     </div>
 {% endfor %}
-
+<a href="{% url 'posts:category'  %}" class="button">Bosh Sahifa</a>
 
 </body>
 </html>

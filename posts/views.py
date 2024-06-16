@@ -1,17 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views import View
 
-from .models import Category, Post,LatestNews,Profile
-
-
-# Create your views here.
-
+from .models import Category, Post,LatestNews
 
 class CategoryView(View):
     def get(self,request):
         categories = Category.objects.all()
         product = Post.objects.all()
-        return render(request,'base.html', {'categories': categories,'product': product})
+        yangilik = LatestNews.objects.all()
+        return render(request,'base.html', {'categories': categories,'product': product, 'yangilik':yangilik})
 
 
 class PostView(View):
@@ -23,34 +20,10 @@ class PostView(View):
 class LatestNewsView(View):
     def get(self,request):
         post = LatestNews.objects.all()
-        return render(request,'songgi_yangilik.html',{'post': post})
+        return render(request,'base.html',{'post': post})
 
 
-
-
-class ProfileView(View):
+class SaytHaqida(View):
     def get(self,request):
-        profile = Profile.objects.all()
-        return render(request,'profile.html',{'profile': profile})
+        return render(request,'sayt_haqida.html')
 
-from django.urls import reverse
-
-from django.shortcuts import get_object_or_404, redirect
-from .models import Post
-
-
-def like_post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    if request.user.is_authenticated:
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-    return redirect('posts:post', pk=pk)
-
-
-class TopLikesProducts(View):
-    def get(self,request):
-        top_likes_products =Post.objects.all()
-        top = top_likes_products.order_by('-likes')[:2]
-        return render(request,'top_likes.html',{'top': top})

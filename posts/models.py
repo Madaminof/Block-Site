@@ -1,5 +1,4 @@
 from django.db import models
-from users.models import CreateUser
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
@@ -15,7 +14,6 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     data = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='images/', blank=True,null=True)
-    likes = models.ManyToManyField(CreateUser, related_name='liked_posts', blank=True)
 
     def __str__(self):
         return f"{self.title} - {self.data} -{self.id}"
@@ -29,15 +27,6 @@ class LatestNews(models.Model):
         return f"{self.data} - {self.text}"
 
 
-class Profile(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    image = models.ImageField(upload_to='profile_images/', blank=True,null=True)
-    tel = models.CharField(max_length=20)
-
-    def __str__(self):
-        return f"{self.first_name} "
 
 
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sayt Haqida</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .container h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .container hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .container p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-info h2, .contact-info h3, .contact-info h4 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .contact-info h4 {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .container p {
+                font-size: 16px;
+            }
+
+            .contact-info h4 {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container p {
+                font-size: 14px;
+            }
+
+            .contact-info h4 {
+                font-size: 12px;
+            }
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sayt Haqida</h1>
+        <hr>
+        <img src="/media/about-1.png" alt="Sayt haqida" class="logo">
+        <p>
+            Bu Sayt «KUN.UZ» ni clone versiyasi bo'lib Dunyodagi barcha yangiliklarni shu saytda taqdim etamiz.
+            Bizni saytni kuzatib boring. Saytdan foydalanish mutlaqo bepul bo‘lib, faqatgina internet traffik sarflanadi.
+        </p>
+        <div class="contact-info">
+            <h2>Murojaat uchun:</h2>
+            <h3>Reklama bo‘limi:</h3>
+            <h4>tel: +998 93 792 20 45</h4>
+            <h4>telegram: madaminoff_00</h4>
+            <h4>instagram: madaminof_7</h4>
+        </div>
+        <a href="{% url 'posts:category'  %}" class="button">Bosh Sahifa</a>
+
+    </div>
+</body>
+</html>
