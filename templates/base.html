@@ -63,7 +63,7 @@
             color: #060505;
             margin: 0 15px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 12px;
             padding: 10px 20px;
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
@@ -145,6 +145,11 @@
             margin: 10px 0;
             color: #333;
         }
+        .product-content h6 {
+            font-size: 13px;
+            margin: 13px 0;
+            color: #656363;
+        }
 
         .product-content p {
             font-size: 16px;
@@ -153,8 +158,8 @@
         }
 
         .product-content hr {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin-top: 1px;
+            margin-bottom: 1px;
             border: none;
             border-top: 1px solid #0e0d0d;
         }
@@ -228,9 +233,9 @@
                         <div class="product-content">
                             <h5>{{ i.data|date:'d.m.Y' }}</h5>
                             <hr>
-                            <h2>{{ i.title }}</h2>
+                            <h3>{{ i.title }}</h3>
                             <hr>
-                            <p>{{ i.text }}</p>
+                            <h6>{{ i.text }}</h6>
                         </div>
                     </div>
                 {% endfor %}

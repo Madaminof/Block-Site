@@ -6,7 +6,7 @@ from .models import Category, Post,LatestNews
 class CategoryView(View):
     def get(self,request):
         categories = Category.objects.all()
-        product = Post.objects.all()
+        product = Post.objects.all().order_by('-data')
         yangilik = LatestNews.objects.all()
         return render(request,'base.html', {'categories': categories,'product': product, 'yangilik':yangilik})
 
